@@ -1,6 +1,3 @@
-## 
-## functions do
-
 ## makeCacheMatrix creates the cache stores so they are available
 ## once cacheSolve is used.
 ## This function sets the working matrix and stores it (set),
@@ -26,14 +23,13 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 ## Solve for the inverse of the matrix and cahce, if not already
-
 cacheSolve <- function(x, ...) {
       inv <- x$getinv()                         #extract inverse from cache list
       
       if (!is.null(inv)) {                      #if inverse already exists, return
             return(inv)
       }
-      
+
       #if not already solved, retrieve from cache, calculate using solve, cache, and return
       matrix <- x$get()
       inv <- solve(matrix, ...)
